@@ -1,0 +1,43 @@
+\pagenumbering{arabic}
+
+\chapter{Introdução} %Contextualização, motivação e justificativa.
+INTRODUÇÃO AQUI
+\section{Confiabilidade de ANN's}
+ Devido a rapidez que as ANN's abrangeram as mais diversas áreas da ciência, pouco foi consolidado sobre a confiabilidade de tais estruturas. Em aplicações como: reconhecimento automático de alvos, diagnósticos médicos, reconhecimento de biometria facial e entre tantos outros sistemas críticos que as ANN's estão presentes; a confiabilidade é um dos principais pré-requisitos de tais sistemas.
+ 
+ A inadimissibilidade de erros, juntamente com a demanda por confiabilidade em sistemas de software vem crescendo cada vez mais. Porém, conforme os sitemas se tornam mais complexos a confiabilidade se torna um requisito dificil de ser alcançado. Em um sistema complexo e crítico, por exemplo, onde um erro pode até mesmo por em risco a vida de alguém, a confiabilidade e a garantia de não haver erro se tornam fundamentais em seu funcionamento. 
+ 
+ Por possuirem estruturas similares ao sistema nervoso humano, as ANN's operam de forma paralela. Ganhos significantes são obtidos quando utiliza-se de dispositivos extremamente paralelos, como por exemplo, as GPU's. Tensorflow, Caffe2, Cognitive Toolkit são exemplos de frameworks para o desenvolvimento de ANN's. Em tais ferramentas o grande número de nucleos das GPU's são usados no cálculo de matrizes, em [] pode ser visto o ganho no cálculo de matrizes na GPU em relação a CPU.
+ 
+ A complexidade é proporcional ao nível de paralelismo de sistemas. Em sitemas críticos, que utilizam de GPU's e ANN's se tornam extremamente paralelos. No entanto, é preciso analisar o paralelismo do grande número de processos encontrados nos núcleos desses dispositivos e garantir que estes continuem operando sem falhas.
+ 
+ Devido à alta demanda de processamento gráfico e à grande difusão das GPUs com programas de alta complexidade, a verificação formal de softwares que gerenciam os recursos das GPUs se tornou uma ferramenta que desempenha um papel importantíssimo no desenvolvimento desses sistemas. Diversos frameworks de software (isto é, conjuntos reusáveis de bibliotecas ou classes) têm sido utilizados para acelerar o desenvolvimento das aplicações dentro dos dispositivos multi-core (GPU), dentre eles os mais utilizados são CUDA e OpenCl. O ESBMC-GPU faz verificação formal de softwares desenvolvidos em CUDA, porém ainda são necessárias algumas extensões, por exemplo: verificar formalmente aplicações de frameworks desenvolvidos em OpenCL, OpenGL, cuDNN, etc. Esse projeto tem como objeto estender o modelo operacional do ESBMC-GPU para que este suporte mais APIs fazendo com que a ferramenta de verificação formal de software abranja mais dos principais frameworks utilizados no desenvolvimento das ANN's.
+ 
+  CUDNN é um framework desenvolvido pela empresa NVIDIA, e é voltado principalmente para a otimização das ANNs que utilizam de CUDA para obter o desempenho dos grandes números de nucleos das GPUs. Desse modo se faz necessário garantir que o grande paralelismo desenvolvido sob tais frameworks tenha confiabilidade.
+
+\subsection{Definir o Problema}
+\subsection{Motivar/Justificar}
+\subsection{Apresentar Hipóteses}
+\section{Objetivos}
+\subsection{Objetivo Geral}
+Este trabalho tem como objetivo desenvolver um conjunto de bibliotecas simplificadas, similares aos frameworks de CUDA e cuDNN, e integrá-las no modelo operacional CUDA do verificador de software ESBMC para que a partir dessas implementações, o verificador consiga analisar aplicações de ANNs reais que utilizam os frameworks em questão de forma mais abrangente.
+
+\subsection{Objetivo Específico}
+(1)	Utilizar de técnicas de verificação formal de modelos e lógica temporal e aplicá-las no framework CUDA; 
+
+(2)	Montar uma suíte de teste a partir de um estudo analítico sobre diversos tipos de programas em CUDA;
+
+(3)	Definir uma estrutura simplificada do framework CUDA; 
+
+(4)	Implementar as assinaturas das bibliotecas de CUDA definidas na estrutura simplificada;
+
+(5)	Implementar a modelagem dos métodos das bibliotecas CUDA da estrutura simplificada;
+
+(6)	Criar um ambiente de simulação para validação de testes de aplicações reais e usuais;
+
+(7)	Integrar as implementações com o ESBMC-GPU.
+
+\section{Organização do Trabalho}
+
+
+% Fim Capítulo
